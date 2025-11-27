@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { personalInfo } from "@/lib/data";
+import { GoogleAnalytics } from "@/components/google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,21 @@ export const metadata: Metadata = {
     "Portfolio",
     "Dilmith Pathirana",
     "Web Developer",
+    "Java",
+    "Python",
+    "Cloud Computing",
   ],
   authors: [{ name: "Dilmith Pathirana", url: "https://dilmith.live" }],
   creator: "Dilmith Pathirana",
+  publisher: "Dilmith Pathirana",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -67,6 +80,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -107,6 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
